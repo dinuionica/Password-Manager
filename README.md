@@ -6,7 +6,7 @@ can view and modify them.
 
 To test this project:
 ```
-git clone https://github.com/Subsurface-divelog/subsurface.git
+https://github.com/dinuionica/Password-Manager.git
 ```
 
 On Linux:
