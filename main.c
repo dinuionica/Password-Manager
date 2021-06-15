@@ -1,9 +1,9 @@
-//Copyright 2020 Dinu Ion Irinel
+// Copyright 2020 Dinu Ion Irinel
 #include "functions.h"
 #include <stdio.h>
 #include <stdlib.h>
-#define true 1
 
+#define true 1
 
 int main(void) {
 
