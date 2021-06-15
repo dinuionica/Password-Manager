@@ -1,10 +1,11 @@
+// Copyright 2020 Dinu Ion Irinel
 #include "functions.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 
-//function to display menu 
 
+// function to display menu 
 void display_menu() {
      
     system("clear");
@@ -18,37 +19,30 @@ void display_menu() {
     
 
 }
-
-//function to encode a string
-
+ 
+// function to encode a string
 void encode_data(char *string) {
     for (int i = 0; i < strlen(string); ++i) {
         string[i] += 3;
     }
 }
 
-//function to decode a string
-
+// function to decode a string
 void decode_data(char *string) {
     for (int i = 0; i < strlen(string); ++i) {
         string[i] -= 3;
     }
 }
 
-//function to make database file
-
+// function to make database file
 void make_data() {
-
     FILE *file ;
     file = fopen("database.txt", "wart");
     fclose(file);
 }
 
-//add an account to database
-
+// add an account to database
 void add_account(account_t *account) {
-
-    
     FILE* file_in;
 	int type_exist = 0;
 	char *type = (char *)malloc(sizeof(char) * 100);
@@ -69,14 +63,14 @@ void add_account(account_t *account) {
 	}
 	fclose(file_in);
 
-    //if the user exist in system
+    // if the user exist in system
 	if (type_exist == 1)
 	{   
 		printf("THIS ACCOUNT ALREADY EXIST IN SYSTEM...!\n");
         sleep(5);
         return;
 
-    //if the user don't exist in system
+    // if the user don't exist in system
 	} else {
 		printf("PLEASE ENTER AGAIN FOR THE TYPE OF THIS ACCOUNT... : ");
         account -> type = malloc(sizeof(account_t));
@@ -117,11 +111,8 @@ void add_account(account_t *account) {
 
 }
 
-//display informations of an account
-
+// display informations of an account
 void display_info(account_t *account) {
-
-
     FILE *file;
     file = fopen("database.txt", "rt");
     if (file == NULL) {
@@ -137,7 +128,7 @@ void display_info(account_t *account) {
     account -> user = malloc(sizeof(account_t));
     account -> passwd = malloc(sizeof(account_t));
 
-    //check if the user and password are correct
+    // checking if the user and password are correct
     int exist = 0;
     while (!feof(file)) {
         fscanf(file, "%s", account -> type);
@@ -167,10 +158,8 @@ void display_info(account_t *account) {
     sleep(5);
 }
 
-//function to free memory
-
+// function to free memory
 void free_memory(account_t *account) {
-
     free(account -> type);
     free(account -> user);
     free(account -> passwd);
