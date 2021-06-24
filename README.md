@@ -1,7 +1,7 @@
 **PASSWORD-MANAGE**
 
 A simple password manager for storing an encrypted password.
-A user can create an account with a username and password, 
+An user can create an account with an username and password, 
 can view and modify his informations.
 
 To test this project:
