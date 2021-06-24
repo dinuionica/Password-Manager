@@ -6,13 +6,9 @@
 #define true 1
 
 int main(void) {
-
     account_t *account = malloc(sizeof(account_t));
-    
     make_data();
-    
     while (true) {
-        
         display_menu();
 
         char option;
@@ -35,7 +31,6 @@ int main(void) {
     }
     
      free_memory(account);
-
      free(account);
      
     return 0;
